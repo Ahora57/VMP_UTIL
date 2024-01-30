@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков\hook">
+      <UniqueIdentifier>{424914f3-9e2e-406a-b453-c164229c53e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Struct">
+      <UniqueIdentifier>{96d33bee-e175-4cc1-b98c-569492e93850}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\util">
+      <UniqueIdentifier>{3c88bb48-93de-4bae-8bf1-020223d0495a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\hook\hook_sdk">
+      <UniqueIdentifier>{c84ba157-f254-47c0-977e-232f9393809d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="struct.h">
+      <Filter>Файлы заголовков\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="init_address.h">
+      <Filter>Файлы заголовков\hook</Filter>
+    </ClInclude>
+    <ClInclude Include="nt_api_def.h">
+      <Filter>Файлы заголовков\Struct</Filter>
+    </ClInclude>
+    <ClInclude Include="dump_syscall.h">
+      <Filter>Файлы заголовков\util</Filter>
+    </ClInclude>
+    <ClInclude Include="lazy_importer.h">
+      <Filter>Файлы заголовков\util</Filter>
+    </ClInclude>
+    <ClInclude Include="single_step_hook.h">
+      <Filter>Файлы заголовков\hook\hook_sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="crc_check.h">
+      <Filter>Файлы заголовков\hook\hook_sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="import_help.h">
+      <Filter>Файлы заголовков\hook\hook_sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="anti_vm.h">
+      <Filter>Файлы заголовков\hook\hook_sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="remove_syscall_id.h">
+      <Filter>Файлы заголовков\hook\hook_sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="anti_debug.h">
+      <Filter>Файлы заголовков\hook\hook_sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="disassembly_util.h">
+      <Filter>Файлы заголовков\util</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook.h">
+      <Filter>Файлы заголовков\util</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
