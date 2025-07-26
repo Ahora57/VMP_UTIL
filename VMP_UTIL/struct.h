@@ -12,7 +12,7 @@
 #include <cstdint>
 #include <vector>
 
-#include <asmjit/x86.h>
+#include <x86.h>
 #include "disassembly_util.h"
 
 //namesoace 
@@ -1322,6 +1322,7 @@ typedef struct _ORIG_ADDR
     PVOID orig_nt_set_thread;
     PVOID orig_nt_continue;
     PVOID orig_nt_close;
+    PVOID orig_nt_query_object; 
     PVOID orig_nt_query_sys;
     PVOID orig_ldr_initialize_thunk;
     PVOID orig_impr_vmp;

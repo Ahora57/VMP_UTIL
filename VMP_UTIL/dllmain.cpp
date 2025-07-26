@@ -15,7 +15,7 @@ BOOL APIENTRY DllMain
                      
 )
 {
-    FILE* file = nullptr;
+    FILE* file = NULL;
     PVOID cur_mod = NULL;
 
     single_step::single_step_hook single_step;
@@ -45,24 +45,24 @@ BOOL APIENTRY DllMain
             
              
 
-            /*
+            
             if (crc_path.is_patch_crc_calc(cur_mod))
             {
                 printf("find!\n");
             }
-             */
+             
 
-            /*
+            
             if (!crc_path.create_hook_virt_mem())
             {
                 printf("Bad Patch enable ret NtQueryVirtualMemory!\n");
             }
-            */
+            
 
-            //vm_str_patch.patch_str_find(cur_mod);
+           vm_str_patch.patch_str_find(cur_mod);
 
 
-            /*
+            
              if (!import_vmp.patch_import_find(cur_mod))
              {
                  if (!import_vmp.patch_strcmp(cur_mod))
@@ -71,28 +71,28 @@ BOOL APIENTRY DllMain
                  }
              }
              
-             */
+             
             
-            /*
-              if (rem_syscall.create_hook_map_sec() && rem_syscall.create_hook_unmap_sec() && rem_syscall.patch_info())
+            
+             if (rem_syscall.create_hook_map_sec() && rem_syscall.create_hook_unmap_sec() && rem_syscall.patch_info())
              {
                  printf("Enable remove syscall!\n");
              }
-             */
-             /*
+             
+             
             if (!hide_debug.create_hook_proc() || !hide_debug.create_hook_thread() || !hide_debug.create_hook_nt_close())
             {
                 printf("Bad enable anti-debug hook!\n");
             }
             
-            */
+            
             
             
 
-            /*
-            if (single_step.create_hook_nt_contin())
+            
+            if (hide_debug.create_hook_nt_contin())
             {
-                if (single_step.enable_hwbp(NULL))
+                if (hide_debug.enable_hwbp(NULL))
                 {
                     printf("Enable HWBP Success!\n"); 
                 }
@@ -105,7 +105,7 @@ BOOL APIENTRY DllMain
             {
                 printf("Bad create hook in NtContinue!\n");
             }
-            */
+            
             AddVectoredExceptionHandler(TRUE, single_step.veh_hook);
             
         }

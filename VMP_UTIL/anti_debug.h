@@ -345,8 +345,8 @@ namespace anti_debug
 			NTSTATUS nt_status = -1;
 			OBJECT_HANDLE_FLAG_INFORMATION handle_flag;
 
-			
-			nt_status = NtQueryObject(handle, ObjectHandleFlagInformation, &handle_flag, sizeof(handle_flag), NULL);
+			 
+			nt_status = reinterpret_cast<decltype(&NtQueryObject)>(init_info::inf_proc.orig_addr.orig_nt_query_object)(handle, ObjectHandleFlagInformation, &handle_flag, sizeof(handle_flag), NULL);
 			if (NT_SUCCESS(nt_status))
 			{
 				if (handle_flag.ProtectFromClose)
@@ -490,6 +490,8 @@ namespace anti_debug
 			}
 
 			target_hook = GetProcAddress(reinterpret_cast<HMODULE>(init_info::inf_proc.ntdll_base), "NtClose");
+
+			init_info::inf_proc.orig_addr.orig_nt_query_object = GetProcAddress(reinterpret_cast<HMODULE>(init_info::inf_proc.ntdll_base), "NtQueryObject");
 
 			mh_status = MH_Initialize();
 			if (mh_status != MH_OK && mh_status != MH_ERROR_ALREADY_INITIALIZED)
